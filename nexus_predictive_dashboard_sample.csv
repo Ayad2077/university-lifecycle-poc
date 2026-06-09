@@ -1,0 +1,11 @@
+student_id,student_type,top_program,university,country,match_score,admission_probability,label
+S225,career_changer,Masters in Engineering Management,Riverside University,Singapore,51.8,58.1,Competitive
+S137,international_roi,Masters in Data Science,Riverside University,Singapore,51.9,22.0,Unlikely
+S068,international_roi,Bachelors in Cybersecurity,Northbridge University,Netherlands,53.7,41.5,Reach
+S232,parent_driven,Masters in Finance,Pacific University,Germany,47.9,17.6,Unlikely
+S214,international_roi,Bachelors in Data Science,Metro University,UK,50.7,25.3,Reach
+S078,international_roi,Masters in Marketing Analytics,Applied University,Australia,50.0,31.1,Reach
+S002,international_roi,Masters in Business Analytics,Applied University,UK,49.0,32.2,Reach
+S282,international_roi,Certificate in International Business,Summit University,Singapore,49.9,29.6,Reach
+S192,career_changer,Bachelors in Cybersecurity,Global University,Australia,54.1,35.3,Reach
+S191,domestic_research,Masters in Cybersecurity,Riverside University,UK,50.0,9.7,Unlikely
