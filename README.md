@@ -1,59 +1,26 @@
 # University Student Lifecycle POC
 
-A Python Streamlit proof of concept for a university student lifecycle platform. This prototype demonstrates how student profile data can be used to generate personalized university recommendations, compare courses, track applications, monitor deadlines, and display academic progress.
+A **Python + Streamlit proof of concept** for a student decision-support platform. The prototype uses student profile data to rank universities, compare courses, track applications and deadlines, and summarize academic progress in one interface.
 
-## Project Overview
+## Why I Built It
 
-The University Student Lifecycle platform is an EdTech SaaS concept designed to support students from university discovery through academic progress tracking. The Figma wireframe shows the full product vision, while this Python proof of concept validates the core system logic behind the platform.
+University planning is often fragmented across ranking sites, spreadsheets, application portals, course catalogs, and career resources. This project explores how those decisions could be brought into one connected workflow.
 
-The prototype focuses on the prospective student experience. It uses demo data to show how a student profile can drive university matching, course recommendations, application tracking, and academic progress insights.
+The goal of the POC is not to simulate a production admissions system. It is to validate the core product logic behind a broader EdTech platform concept.
 
-## Purpose of the POC
+## What the Prototype Does
 
-This proof of concept was built to test whether the platform’s main logic could work before building a full production application.
+- Builds a student profile using GPA, test score, interests, preferred location, and budget
+- Ranks universities with a weighted fit model
+- Compares courses using ROI, workload, difficulty, and professor ratings
+- Tracks application status and upcoming deadlines
+- Flags urgent deadlines
+- Displays academic progress and performance metrics
+- Uses synthetic data so the product logic can be demonstrated without relying on real student records
 
-The POC validates:
+## Match Scoring Model
 
-* Profile-based university recommendations
-* Weighted university match scoring
-* Course comparison by ROI, workload, difficulty, and professor rating
-* Application progress tracking
-* Deadline urgency detection
-* Academic progress dashboarding
-
-## Core Features
-
-### Student Dashboard
-
-The dashboard gives students a high-level view of their university search progress, including saved universities, average match score, active applications, upcoming deadlines, top matches, and recommended courses.
-
-### Profile Setup
-
-The profile setup page collects key student information such as GPA, test score, interests, preferred locations, and budget range. This data represents the type of profile information that would drive personalized recommendations in the full product.
-
-### University Search and Rankings
-
-The university search page allows users to filter schools by region, program, and tuition. Universities are ranked using a weighted match score based on academic fit, career fit, financial fit, and location fit.
-
-### Course Finder and Comparison
-
-The course finder allows students to compare courses across programs. The comparison includes professor rating, workload, difficulty level, ROI score, and course match score.
-
-### AI Match Dashboard
-
-The AI Match page demonstrates the recommendation logic behind the platform. It breaks fit into academic, career, and financial categories and shows the top recommended universities based on the student’s profile.
-
-### Application Tracker
-
-The application tracker organizes applications by status: Planning, In Progress, Submitted, and Admitted. It also calculates days left until each deadline and flags urgent applications.
-
-### Academic Progress Dashboard
-
-The academic progress page shows GPA, credits earned, attendance, workload, course performance, milestones, and projected career outcomes.
-
-## Match Score Logic
-
-The university match score is calculated using a weighted scoring model:
+The university recommendation score uses four weighted dimensions:
 
 ```text
 Match Score =
@@ -63,67 +30,61 @@ Academic Fit × 35%
 + Location Fit × 15%
 ```
 
-This scoring model reflects the platform’s goal of recommending universities based on a balanced view of academic compatibility, career outcomes, affordability, and location preference.
+The weighting is intentionally simple and transparent for a proof of concept. A production model would require validated data, user research, and more rigorous testing.
 
-## Technology Used
+## Technology
 
-* Python
-* Streamlit
-* Pandas
-* GitHub Codespaces
+- Python
+- Streamlit
+- Pandas
 
-## How to Run the Project
+## Run Locally
 
-Install the required packages:
-
-```bash
-pip install streamlit pandas
-```
-
-Run the Streamlit app:
+Clone the repository and install dependencies:
 
 ```bash
-streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+git clone https://github.com/Ayad2077/university-lifecycle-poc.git
+cd university-lifecycle-poc
+pip install -r requirements.txt
 ```
 
-If using GitHub Codespaces, open the app through:
+Start the application:
+
+```bash
+streamlit run app.py
+```
+
+## Repository Contents
 
 ```text
-Ports > 8501 > Open in Browser
+university-lifecycle-poc/
+├── app.py                                  # Main Streamlit prototype
+├── requirements.txt                        # Python dependencies
+├── University_Lifecycle_Python_POC_FIXED.ipynb
+│                                           # Earlier notebook-based prototype
+├── nexus_courses_synthetic.csv             # Synthetic course data
+├── nexus_students_synthetic.csv            # Synthetic student data
+├── nexus_universities_synthetic.csv         # Synthetic university data
+├── nexus_match_results_sample.csv          # Sample recommendation output
+└── nexus_predictive_dashboard_sample.csv   # Sample dashboard output
 ```
 
-## Demo Data Notice
+## Data Notice
 
-This project uses sample demo data for proof-of-concept purposes. The numbers shown for universities, courses, applications, and academic progress are used to demonstrate functionality and system logic. In a production version, this data would come from verified university databases, admissions data, labor market sources, course catalogs, and student records.
+All student, university, course, application, and outcome information in this repository is **demo or synthetic data** created to demonstrate product behavior. It should not be interpreted as verified admissions, tuition, ranking, career, or academic-performance data.
 
-## Product Vision
+## Product Direction
 
-The full platform would connect multiple parts of the student lifecycle into one system:
+A fuller version could add:
 
-1. University discovery
-2. Program comparison
-3. AI-powered fit recommendations
-4. Course planning
-5. Application tracking
-6. Academic progress monitoring
-7. Alumni and career outcome insights
+- Verified university and program datasets
+- Authentication and persistent user profiles
+- Database-backed application tracking
+- Live deadline reminders
+- Explainable personalized recommendations
+- University administration tools
+- Alumni and career outcome data
 
-The goal is to reduce fragmented decision-making and give students a single connected system for evaluating universities, managing applications, and tracking academic progress.
+## Status
 
-## Future Improvements
-
-Future versions could include:
-
-* Real university datasets
-* User authentication
-* Persistent database storage
-* Interactive application updates
-* Live deadline reminders
-* Personalized AI explanations
-* Admin dashboard for universities
-* Employer and alumni outcome tracking
-* Deployment to Streamlit Community Cloud or another hosting platform
-
-## Project Status
-
-This is a working Python proof of concept. It is not a full production application. The goal is to validate the core platform logic and show how the Figma product design can be translated into a functional prototype.
+This is a working proof of concept intended to demonstrate product thinking, data-driven decision logic, and rapid application prototyping rather than a production-ready platform.
