@@ -7,6 +7,12 @@ st.set_page_config(
     layout="wide"
 )
 
+st.info(
+    "Portfolio prototype with synthetic data. Scores and outcomes are illustrative; "
+    "forms and action buttons demonstrate the intended workflow. "
+    "Deadline calculations use May 10, 2026 as a fixed demo date."
+)
+
 # --------------------------------------------------
 # Demo Data
 # --------------------------------------------------
@@ -190,7 +196,7 @@ applications["Urgency"] = applications["Days Left"].apply(
 # --------------------------------------------------
 
 st.sidebar.title("University Student Lifecycle")
-st.sidebar.caption("EdTech SaaS Platform")
+st.sidebar.caption("Student planning prototype")
 st.sidebar.divider()
 
 page = st.sidebar.radio(
@@ -200,7 +206,7 @@ page = st.sidebar.radio(
         "Profile Setup",
         "University Search",
         "Course Finder",
-        "AI Match",
+        "Match Breakdown",
         "Applications",
         "Academic Progress"
     ]
@@ -279,7 +285,7 @@ if page == "Dashboard":
         st.button("Start New Application", use_container_width=True)
         st.button("Search Universities", use_container_width=True)
         st.button("Compare Programs", use_container_width=True)
-        st.button("View AI Matches", use_container_width=True)
+        st.button("View Match Breakdown", use_container_width=True)
 
 # --------------------------------------------------
 # Profile Setup
@@ -341,7 +347,7 @@ elif page == "Profile Setup":
     with col6:
         st.button("Continue to Dashboard", type="primary")
 
-    st.success("Profile data saved for the POC demo.")
+    st.info("Profile inputs are illustrative in this demo; changes are not saved or used in scoring.")
 
 # --------------------------------------------------
 # University Search
@@ -409,7 +415,7 @@ elif page == "University Search":
 
     st.caption(
         "System Response: Filter selection updates the results. "
-        "Schools are ranked using Maya's profile and weighted match logic."
+        "Schools are ranked using predefined demo fit scores and weighted match logic."
     )
 
 # --------------------------------------------------
@@ -478,14 +484,14 @@ elif page == "Course Finder":
 # AI Match
 # --------------------------------------------------
 
-elif page == "AI Match":
-    st.title("AI Personalized Match Dashboard")
-    st.caption("Machine learning-powered university recommendations")
+elif page == "Match Breakdown":
+    st.title("University Match Breakdown")
+    st.caption("Weighted scoring using predefined demo fit values")
     st.info("User Type: Prospective Student")
 
     st.success(
-        "AI Analysis Summary for Maya Chen: Based on GPA, test score, career goals, budget, "
-        "and location preferences, the system identified strong university matches."
+        "Demo match summary for Maya Chen: Rankings use predefined academic, career, "
+        "financial, and location fit scores. Profile edits do not change these scores."
     )
 
     col1, col2, col3 = st.columns(3)
@@ -520,7 +526,7 @@ elif page == "AI Match":
             st.write("Cost of Living: 75%")
             st.progress(75)
 
-    st.subheader("Top AI-Recommended Universities")
+    st.subheader("Top Universities by Demo Match Score")
 
     top_ai = universities.sort_values("Match Score", ascending=False).head(3)
 
@@ -701,7 +707,7 @@ elif page == "Academic Progress":
 st.divider()
 
 st.caption(
-    "Python POC Summary: This prototype validates the core platform logic behind the Figma design, "
+    "Python POC Summary: This prototype explores the student workflow behind the Figma design, "
     "including student profile setup, university matching, course comparison, application tracking, "
     "deadline urgency, and academic progress reporting."
 )
