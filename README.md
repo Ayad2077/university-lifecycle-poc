@@ -58,15 +58,14 @@ streamlit run app.py
 
 ```text
 university-lifecycle-poc/
-├── app.py                                  # Main Streamlit prototype
-├── requirements.txt                        # Python dependencies
-├── University_Lifecycle_Python_POC_FIXED.ipynb
-│                                           # Earlier notebook-based prototype
-├── nexus_courses_synthetic.csv             # Synthetic course data
-├── nexus_students_synthetic.csv            # Synthetic student data
-├── nexus_universities_synthetic.csv         # Synthetic university data
-├── nexus_match_results_sample.csv          # Sample recommendation output
-└── nexus_predictive_dashboard_sample.csv   # Sample dashboard output
+├── app.py                                # Main Streamlit prototype
+├── requirements.txt                      # Python dependencies
+├── university_lifecycle_analysis.ipynb   # Earlier notebook-based prototype
+├── nexus_courses_synthetic.csv           # Synthetic course data
+├── nexus_students_synthetic.csv          # Synthetic student data
+├── nexus_universities_synthetic.csv      # Synthetic university data
+├── nexus_match_results_sample.csv        # Sample recommendation output
+└── nexus_predictive_dashboard_sample.csv # Sample dashboard output
 ```
 
 ## Data Notice
